@@ -1,0 +1,22 @@
+Altoholic Forever Changelog (dates in dd/mm/yyyy)
+===========================
+
+
+How to support Altoholic's development :
+
+- For a single donation : Use the donate button either on Curse or on WoW Interface.
+
+If you like the addon, consider supporting it, this has been the long term effort and commitment of a single person. #ArmyOfOne
+
+
+
+1.60.001 (30/09/2026)
+
+- Initial Release
+- This version is based on the retail version of Altoholic, since the game uses the same engine, and mostly the same API.
+- As far as I could see, there are no lua errors.
+- There is a bug in WoW Forever, where the game returns "Unknown" for the character name, this is a Blizzard bug.
+It causes a character to occasionnally be displayed twice in the account summary.
+You can delete the one that is not "Online".
+It is annoying, but until they fix it, there is nothing I can do.
+Please do not report this bug to me.
