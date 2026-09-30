@@ -36,10 +36,6 @@ jobs:
           mv temp/DataStore .
           rm -rf temp
           
-          git clone https://github.com/Thaoky/DataStore_Achievements.git temp
-          mv temp/DataStore_Achievements .
-          rm -rf temp
-          
           git clone https://github.com/Thaoky/DataStore_Agenda.git temp
           mv temp/DataStore_Agenda .
           rm -rf temp
@@ -64,20 +60,12 @@ jobs:
           mv temp/DataStore_Currencies .
           rm -rf temp
           
-          git clone https://github.com/Thaoky/DataStore_Garrisons.git temp
-          mv temp/DataStore_Garrisons .
-          rm -rf temp
-          
           git clone https://github.com/Thaoky/DataStore_Inventory.git temp
           mv temp/DataStore_Inventory .
           rm -rf temp
           
           git clone https://github.com/Thaoky/DataStore_Mails.git temp
           mv temp/DataStore_Mails .
-          rm -rf temp
-          
-          git clone https://github.com/Thaoky/DataStore_Pets.git temp
-          mv temp/DataStore_Pets .
           rm -rf temp
           
           git clone https://github.com/Thaoky/DataStore_Quests.git temp
