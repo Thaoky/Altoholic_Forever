@@ -10,6 +10,12 @@ If you like the addon, consider supporting it, this has been the long term effor
 
 
 
+1.60.002 (02/10/2026)
+
+- Fixed multiple issues related to the new patch, and the support of multiple wow clients.
+- Characters tab : Fixed auctions not properly being listed.
+- Characters tab : Fixed clearing auction house entries not working properly.
+
 1.60.001 (30/09/2026)
 
 - Initial Release
