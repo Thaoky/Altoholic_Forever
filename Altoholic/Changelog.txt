@@ -10,6 +10,11 @@ If you like the addon, consider supporting it, this has been the long term effor
 
 
 
+1.60.003 (02/10/2026)
+
+- DataStore_Containers : Fixed a lua error when opening the bank.
+- DataStore_Quests : Fixed 2 lua errors when turning a quest in.
+
 1.60.002 (02/10/2026)
 
 - Fixed multiple issues related to the new patch, and the support of multiple wow clients.
