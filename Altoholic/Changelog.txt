@@ -10,6 +10,16 @@ If you like the addon, consider supporting it, this has been the long term effor
 
 
 
+1.60.004 (07/10/2026)
+
+- DataStore_Characters : Fixed the calculation of rested xp for the currently logged in character.
+- Fixed a lua error when mousing over boss loot. (Thanks Tenortim !)
+- Summary Tab : Fixed support of consolidated bank. (Thanks Tenortim !)
+- Characters Tab : Fixed support of consolidated bank. (Thanks Tenortim !)
+- Characters Tab : Set default panel to Containers. (Thanks Tenortim !)
+- DataStore_Crafts : Fixed profession scanning for newly learned professions. (Thanks Tenortim !)
+- DataStore_Inventory : Fixed equipment scanning in Forever (Thanks Tenortim !)
+
 1.60.003 (02/10/2026)
 
 - DataStore_Containers : Fixed a lua error when opening the bank.
