@@ -26,6 +26,9 @@ end
 
 local bankSlotPrices = { 1000, 10000, 100000, 250000, 250000, 250000, 250000 }
 
+-- Bank tabs only exist with the 11.2 consolidated bank (same test as DataStore_Containers), Classic Forever still has bank bags
+local isConsolidatedBank = (AddonFactory.buildVersion >= 110200)
+
 -- ** Bags & Banks **
 Columns.RegisterColumn("BagSlots", {
 	-- Header
@@ -181,10 +184,16 @@ Columns.RegisterColumn("BankSlots", {
 				local size = DataStore:GetContainerSize(character, tabID)
 				local _, _, free, _ = DataStore:GetContainerInfo(character, tabID)
 
-				local tabName = DataStore:GetPlayerBankTabName(character, tabID)
-				local tabIcon = DataStore:GetPlayerBankTabIcon(character, tabID)
-				tt:AddDoubleLine(format("%s %s", Formatter.Texture18(tabIcon), tabName), FormatBagSlots(size, free))
-					
+				if isConsolidatedBank then
+					local tabName = DataStore:GetPlayerBankTabName(character, tabID)
+					local tabIcon = DataStore:GetPlayerBankTabIcon(character, tabID)
+					tt:AddDoubleLine(format("%s %s", Formatter.Texture18(tabIcon), tabName), FormatBagSlots(size, free))
+				
+				elseif size and size > 0 then
+					-- bank bags: show the bag itself
+					local link, _, _, bagType = DataStore:GetContainerInfo(character, tabID)
+					tt:AddDoubleLine(FormatBagType(link, bagType), FormatBagSlots(size, free))
+				end
 					
 					
 				-- if this slot was not purchased yet..
