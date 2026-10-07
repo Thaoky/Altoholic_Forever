@@ -8,6 +8,9 @@ local L = AddonFactory:GetLocale(addonName)
 
 local enum = DataStore.Enum.ContainerIDs
 
+-- Bank tabs only exist with the 11.2 consolidated bank (same test as DataStore_Containers), Classic Forever still has bank bags
+local isConsolidatedBank = (AddonFactory.buildVersion >= 110200)
+
 local OPTION_VIEW_BAGS = "ViewBags"
 local OPTION_VIEW_BANK = "ViewBank"
 local OPTION_VIEW_BAGS_RARITY = "ViewBagsRarity"
@@ -33,8 +36,10 @@ addon:Controller("AltoholicUI.TabCharacters.Containers", function()
 		else
 			local character = AltoholicFrame.TabCharacters:GetCharacter()
 			local link = DataStore:GetContainerLink(character, id)
-			if (id >= FIRST_BANK_BAG) and (id <= LAST_BANK_BAG) then
+			
+			if isConsolidatedBank and (id >= FIRST_BANK_BAG) and (id <= LAST_BANK_BAG) then
 				local tabName = DataStore:GetPlayerBankTabName(character, id)
+				
 				GameTooltip:AddLine(tabName, 1, 1, 1)
 				GameTooltip:AddLine(format(CONTAINER_SLOTS, 98, BAGSLOT), 1, 1, 1)
 				GameTooltip:AddLine(L["Bank bag"], 0, 1, 0)
@@ -155,7 +160,7 @@ addon:Controller("AltoholicUI.TabCharacters.Containers", function()
 						local container = DataStore:GetContainer(character, containerID)
 						
 						local containerIcon
-						if containerID >= Enum.BagIndex.CharacterBankTab_1 and containerID <= Enum.BagIndex.CharacterBankTab_6 then
+						if isConsolidatedBank and containerID >= Enum.BagIndex.CharacterBankTab_1 and containerID <= Enum.BagIndex.CharacterBankTab_6 then
 							containerIcon = DataStore:GetPlayerBankTabIcon(character, containerID)
 						else 
 							containerIcon = DataStore:GetContainerIcon(character, containerID)
