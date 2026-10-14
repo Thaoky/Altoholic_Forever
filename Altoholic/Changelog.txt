@@ -9,6 +9,9 @@ How to support Altoholic's development :
 If you like the addon, consider supporting it, this has been the long term effort and commitment of a single person. #ArmyOfOne
 
 
+1.60.005 (14/10/2026)
+
+- Fixed tooltip counters no longer being shown on chat links.
 
 1.60.004 (07/10/2026)
 
